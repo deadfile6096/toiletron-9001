@@ -1,0 +1,1441 @@
+/* Basic Reset & Body Styling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Verdana, sans-serif; /* Classic web-safe fonts */
+    background-color: #000000; /* Space black */
+    background-image: url('../images/starfield_background.jpeg');
+    background-repeat: repeat; /* Tiled background */
+    color: #FFFFFF; /* White text for contrast */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure body takes full width */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Toaster Animation in Sidebar */
+.toaster-animation {
+    animation: float-toaster 3s ease-in-out infinite,
+              glow-toaster 2s alternate infinite;
+}
+
+@keyframes float-toaster {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes glow-toaster {
+    0% { filter: drop-shadow(0 0 3px #ff5733); }
+    100% { filter: drop-shadow(0 0 5px #39ff14); }
+}
+
+/* Wrapper for fixed-width layout */
+.wrapper {
+    max-width: 800px; /* Fixed width, typical of the era */
+    margin: 15px auto; /* Center the layout */
+    background-color: #1a1a2e; /* Dark blue/purple spacey background for content */
+    border: 3px outset #FF5733; /* Mars Red outset border */
+    display: flex; /* Use flexbox for sidebar/content layout */
+}
+
+/* Sidebar Styling (Simulating Frames) */
+.sidebar {
+    width: 180px !important;
+    padding: 10px;
+    border-right: 2px inset #FF5733; /* Inset border to separate */
+    background-color: #162447; /* Slightly different dark blue */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    /* Make sidebar fixed if needed, but might complicate simple layout */
+}
+
+.sidebar .logo-placeholder {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo-placeholder img {
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.sidebar .logo-placeholder p {
+    font-family: Impact, sans-serif;
+    font-size: 14px;
+    color: #FF5733; /* Mars Red */
+    margin: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav li a {
+    display: block;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: #FFFF00; /* Bright Yellow links */
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px outset #FFFF00;
+    background-color: #1f4068;
+    text-align: center;
+}
+
+.sidebar nav li a:hover {
+    color: #000000;
+    background-color: #FFFF00;
+}
+
+.sidebar .hit-counter {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #C0C0C0; /* Silver */
+}
+
+.sidebar .hit-counter img {
+    margin-top: 5px;
+    border: 1px solid #C0C0C0;
+}
+
+/* Main Content Area Styling */
+.content-area {
+    padding: 15px;
+    flex-grow: 1; /* Allow content area to fill remaining space */
+    /* Removed overflow-y: auto; let the body scroll */
+}
+
+#intro-animation {
+    background-color: #333;
+    color: #FFF;
+    border: 2px dashed #FF5733 !important; /* Override inline style for emphasis */
+}
+
+/* Section Styling */
+section {
+    padding-top: 20px; /* Add some space above each section */
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    color: #39FF14; /* Neon Green */
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 1px 1px #000000;
+    margin-bottom: 5px;
+}
+
+section h3 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #FFFF00; /* Yellow */
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+section h4 {
+    color: #FF5733; /* Mars Red */
+    font-family: Impact, sans-serif;
+    margin-bottom: 5px;
+}
+
+/* Section Divider */
+.section-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 87, 51, 0), rgba(255, 87, 51, 0.75), rgba(255, 87, 51, 0)); /* Fading Mars Red line */
+    margin: 30px 0;
+}
+
+/* Specific Section Styles */
+#home h1 {
+    font-family: Impact, 'Arial Black', sans-serif; /* Classic bold font */
+    color: #FF5733; /* Mars Red */
+    text-align: center;
+    font-size: 28px;
+    text-shadow: 2px 2px #000000;
+}
+
+#home .tagline {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Iconic font */
+    color: #39FF14; /* Neon Green */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#features div {
+    margin-bottom: 15px;
+    padding-left: 40px; /* Indent feature text */
+    position: relative;
+}
+
+#features div img {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust vertical alignment */
+}
+
+#testimonials blockquote {
+    border-left: 3px solid #FFFF00; /* Yellow border */
+    margin: 15px 0;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+#testimonials blockquote footer {
+    font-style: normal;
+    font-size: 12px;
+    color: #C0C0C0; /* Silver */
+    text-align: right;
+}
+
+#order form label {
+    display: inline-block;
+    width: 120px; /* Align labels */
+    text-align: right;
+    margin-right: 10px;
+    color: #FFFF00;
+}
+
+#order form input[type="text"],
+#order form textarea {
+    background-color: #333;
+    border: 1px inset #FF5733;
+    color: #FFF;
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 250px; /* Consistent width */
+}
+
+#order form textarea {
+    height: 60px;
+}
+
+#order form button {
+    margin-left: 130px; /* Align button with inputs */
+}
+
+#faq dl {
+    margin: 0;
+    padding: 0;
+}
+
+#faq dt {
+    font-weight: bold;
+    color: #FFFF00; /* Yellow */
+    margin-top: 10px;
+}
+
+#faq dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#guestbook form label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    color: #FFFF00;
+}
+
+#guestbook form input[type="text"],
+#guestbook form textarea {
+    background-color: #333;
+    border: 1px inset #FF5733;
+    color: #FFF;
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 250px;
+}
+
+#guestbook form textarea {
+    height: 60px;
+}
+
+#guestbook form button {
+    margin-left: 130px;
+}
+
+.guestbook-entries {
+    margin-top: 20px;
+    border-top: 1px dashed #C0C0C0;
+    padding-top: 10px;
+}
+
+.guestbook-entries h4 {
+    color: #FFFF00;
+}
+
+.guestbook-entries p {
+    font-size: 12px;
+    border-bottom: 1px dotted #555;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #EAEAEA; /* Light gray text */
+}
+
+/* Glossy Button Style */
+.button.glossy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-family: Impact, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    text-shadow: 1px 1px 1px #000;
+    /* Glossy effect using gradient */
+    background: linear-gradient(to bottom, #ff8c66, #FF5733 50%, #cc4629 51%, #e64d2e);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.button.glossy-button:hover {
+    background: linear-gradient(to bottom, #ff9d80, #ff704d 50%, #e64d2e 51%, #ff5a36);
+}
+
+.cta-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* GIF Gallery */
+.gif-gallery {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px dashed #C0C0C0;
+    padding-top: 15px;
+}
+
+.gif-gallery img {
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+/* Footer Styling */
+footer {
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #C0C0C0; /* Silver */
+    border-top: 1px solid #FF5733;
+    max-width: 800px; /* Match wrapper width */
+    margin: 15px auto 0 auto; /* Center footer */
+}
+
+
+/* Ad Banner Styling */
+.ad-banner-sidebar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ad-banner-sidebar img {
+    border: 1px solid #FFFF00; /* Yellow border like old ads */
+    max-width: 100%; /* Ensure it fits sidebar */
+    height: auto;
+}
+
+.ad-banner-main {
+    margin: 20px auto; /* Center the main banner */
+    text-align: center;
+    max-width: 468px; /* Common banner size */
+}
+
+.ad-banner-main img {
+    border: 2px outset #FF5733; /* Mars Red border */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add some margin to the hit counter to space it from the ad */
+.sidebar .hit-counter {
+    margin-top: 20px; 
+}
+
+
+/* Ad Placeholder Styling */
+.ad-placeholder-medium {
+    border: 2px dashed #FFFF00; /* Bright yellow dashed border */
+    background-color: #2a2a3e; /* Slightly different dark background */
+    color: #C0C0C0; /* Silver text */
+    text-align: center;
+    padding: 10px;
+    margin: 15px auto; /* Add margin top/bottom and center horizontally */
+    width: 150px; /* Moderate width */
+    height: 100px; /* Moderate height */
+    font-size: 12px;
+    display: flex; /* Use flexbox to center content vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-placeholder-medium p {
+    margin: 3px 0;
+    color: #C0C0C0; /* Ensure placeholder text is silver */
+    font-size: 11px; /* Smaller font for placeholder text */
+}
+
+/* Specific placeholder adjustments */
+.ad-sidebar-placeholder {
+    width: 140px; /* Fit better in sidebar */
+    height: 140px;
+}
+
+.ad-main-placeholder {
+    width: 200px;
+    height: 80px;
+}
+
+.ad-inline-placeholder {
+    width: 90%; /* Take up most of the content width */
+    max-width: 400px; /* Limit max width */
+    height: 60px;
+    margin: 20px auto; /* Center it */
+}
+
+
+/* Hot Singles Ad Placeholder Styling */
+.ad-placeholder-hot-singles {
+    border: 3px double #FF00FF; /* Garish magenta double border */
+    background-color: #FFFF00; /* Bright yellow background */
+    color: #0000FF; /* Bright blue text */
+    text-align: center;
+    padding: 8px;
+    margin: 20px auto; /* Add margin top/bottom and center horizontally */
+    width: 140px; /* Fit sidebar */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Classic cheesy font */
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.ad-placeholder-hot-singles p {
+    margin: 4px 0;
+    color: #0000FF; /* Ensure text is blue */
+}
+
+.ad-placeholder-hot-singles .blink {
+    animation: blinker 1s linear infinite;
+    color: #FF0000; /* Red blinking text */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Blinker Animation */
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Generic blink animation for use anywhere */
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+/* Martian Cult Ad Placeholder Styling */
+.ad-placeholder-cult {
+    border: 2px inset #8A2BE2; /* Deep purple inset border */
+    background-color: #4B0082; /* Indigo background */
+    color: #FFD700; /* Gold text */
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+    width: 140px; /* Fit sidebar */
+    font-family: Georgia, serif; /* Slightly more serious font */
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.ad-placeholder-cult p {
+    margin: 5px 0;
+    color: #FFD700; /* Ensure text is gold */
+}
+
+.ad-placeholder-cult p:last-child {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FF4500; /* Orange-Red for the call to action */
+    cursor: pointer; /* Make it look clickable */
+}
+
+/* Additional Flashy Animations for Ads */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 0); }
+  50% { transform: translate(5px, 0); }
+  75% { transform: translate(-5px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes colorshift {
+  0% { color: #FF00FF; } /* Magenta */
+  25% { color: #FFFF00; } /* Yellow */
+  50% { color: #00FFFF; } /* Cyan */
+  75% { color: #FF5733; } /* Mars Red/Orange */
+  100% { color: #FF00FF; } /* Back to Magenta */
+}
+
+@keyframes backgroundPulse {
+  0% { background-color: #2a2a3e; }
+  50% { background-color: #3a3a4e; }
+  100% { background-color: #2a2a3e; }
+}
+
+.pulse-animation {
+  animation: pulse 1.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+.shake-animation {
+  animation: shake 0.5s infinite linear;
+  display: inline-block;
+}
+
+.rotate-animation {
+  animation: rotate 5s infinite linear;
+  display: inline-block;
+}
+
+.colorshift-animation {
+  animation: colorshift 3s infinite linear;
+}
+
+.ad-flashy {
+  animation: backgroundPulse 4s infinite ease-in-out;
+}
+
+/* Additional animations specifically for the first ad */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glitch {
+  0% { transform: skewX(0deg); }
+  5% { transform: skewX(10deg); }
+  10% { transform: skewX(-10deg); }
+  15% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }
+}
+
+@keyframes shimmer {
+  0% { 
+    box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF; 
+    text-shadow: 0 0 10px #00FFFF;
+  }
+  50% { 
+    box-shadow: 0 0 20px #FF00FF, 0 0 30px #FF00FF; 
+    text-shadow: 0 0 10px #FF00FF;
+  }
+  100% { 
+    box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF; 
+    text-shadow: 0 0 10px #00FFFF;
+  }
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.float-animation {
+  animation: float 3s infinite ease-in-out;
+}
+
+.glitch-animation {
+  animation: glitch 4s infinite;
+}
+
+.shimmer-animation {
+  animation: shimmer 3s infinite;
+}
+
+.wobble-animation {
+  animation: wobble 2s infinite ease-in-out;
+}
+
+.first-ad-bg {
+  background: linear-gradient(45deg, #162447, #2a2a3e, #162447);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced Hit Counter Styles */
+.counter-display {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.counter-digit {
+    display: inline-block;
+    background-color: #000;
+    color: #39FF14; /* Neon green */
+    border: 1px solid #FF5733; /* Mars red */
+    padding: 1px 3px;
+    margin: 0 1px;
+    width: 12px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 0 3px #FF5733;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.counter-digit:hover {
+    color: #FFFF00; /* Yellow on hover */
+    transform: scale(1.2);
+}
+
+@keyframes countingDigit {
+    0% { transform: translateY(0); color: #39FF14; }
+    25% { transform: translateY(-2px); color: #FFFF00; }
+    50% { transform: translateY(0); color: #00FFFF; }
+    75% { transform: translateY(2px); color: #FF5733; }
+    100% { transform: translateY(0); color: #39FF14; }
+}
+
+.counter-digit.pulse-animation {
+    animation: countingDigit 0.5s ease-in-out;
+}
+
+.counter-icons {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sidebar .hit-counter p {
+    margin: 5px 0;
+}
+
+.sidebar .hit-counter .blink {
+    color: #FFFF00; /* Yellow */
+    font-size: 10px;
+}
+
+.sidebar .hit-counter .counter-icons img {
+    border: none;
+    margin: 0;
+}
+
+/* Elon Musk Mars Colony Ad Styles */
+.elon-mars-ad {
+    width: 100%;
+    margin: 15px 0;
+    background: linear-gradient(to right, #500000, #800000, #500000);
+    border: 3px double #FFD700; /* Gold border */
+    box-shadow: 0 0 15px #FF5733, inset 0 0 10px #FF5733;
+}
+
+.elon-mars-ad-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.elon-ad-left, .elon-ad-right {
+    flex: 0 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elon-ad-center {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.elon-ad-center h3 {
+    font-family: Impact, sans-serif;
+    color: #FFD700; /* Gold */
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #FF5733, 0 0 10px #FF8C00;
+}
+
+.elon-ad-tagline {
+    margin-bottom: 10px;
+}
+
+.elon-ad-tagline p {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.elon-ad-tagline p:first-child {
+    font-size: 16px;
+    color: #39FF14; /* Neon green */
+}
+
+.elon-ad-cta {
+    margin: 10px 0 5px 0;
+}
+
+.elon-ad-cta .button.glossy-button {
+    background: linear-gradient(to bottom, #FFA500, #FF8C00 50%, #FF7F50 51%, #FF6347);
+    font-size: 14px;
+    padding: 8px 15px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000000;
+    margin: 0;
+}
+
+.elon-ad-cta .button.glossy-button:hover {
+    background: linear-gradient(to bottom, #FFD700, #FFA500 50%, #FF8C00 51%, #FF7F50);
+}
+
+.elon-ad-disclaimer {
+    background-color: #300000;
+    border-top: 1px solid #FF5733;
+    padding: 5px;
+    font-size: 10px;
+    color: #AAAAAA;
+}
+
+/* Ad Placeholders */
+.ad-placeholder-medium {
+  /* ... existing code ... */
+}
+
+/* Available Ad Space Styling */
+.ad-placeholder-available {
+  margin: 15px auto;
+  padding: 5px;
+  text-align: center;
+  width: 90%;
+  min-height: 180px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 10px,
+    rgba(30, 30, 30, 0.3) 10px,
+    rgba(30, 30, 30, 0.3) 20px
+  );
+  border-radius: 5px;
+}
+
+.available-ad-border {
+  border: 2px dashed #39ff14;
+  height: 100%;
+  animation: border-color-change 3s infinite alternate;
+  padding: 3px;
+}
+
+.available-ad-inner {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ad-placeholder-available h4 {
+  color: #ff00ff;
+  margin-top: 0;
+  font-size: 18px;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.for-sale-tag {
+  background-color: #ff0000;
+  color: #ffff00;
+  font-weight: bold;
+  padding: 3px 8px;
+  transform: rotate(-5deg);
+  display: inline-block;
+  margin: 5px auto;
+  border: 1px solid #ffff00;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+.ad-dimensions {
+  font-size: 12px;
+  color: #c0c0c0;
+  margin: 5px 0;
+}
+
+.contact-info {
+  font-size: 11px;
+  color: #39ff14;
+  margin: 5px 0;
+}
+
+.ad-benefits {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.ad-benefits p {
+  margin: 2px 0;
+}
+
+@keyframes border-color-change {
+  0% { border-color: #39ff14; }
+  50% { border-color: #ff00ff; }
+  100% { border-color: #ffff00; }
+}
+
+/* Solana Token Ad Styling */
+.solana-token-ad {
+  margin: 15px auto;
+  width: 90%;
+  padding: 8px;
+  background: linear-gradient(to bottom, #000033, #000022);
+  border: 3px ridge #00FF8F;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  box-shadow: 0 0 10px #00FF8F;
+  position: relative;
+  overflow: hidden;
+}
+
+.solana-token-ad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" /><circle cx="50" cy="50" r="1" fill="%2339ff14" opacity="0.3" /></svg>');
+  background-repeat: repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.solana-token-ad > * {
+  position: relative;
+  z-index: 2;
+}
+
+.token-ad-header {
+  margin-bottom: 8px;
+}
+
+.token-ad-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #00FF8F;
+  text-shadow: 0 0 5px #00FF8F;
+  letter-spacing: 1px;
+}
+
+.token-ticker {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFF00;
+}
+
+.token-chart {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 8px 0;
+  padding: 2px;
+  border: 1px solid #00FF8F;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.chart-bar {
+  width: 18%;
+  background-color: #00FF8F;
+  animation: chart-pulse 2s infinite alternate;
+}
+
+.bar1 { height: 30%; animation-delay: 0.1s; }
+.bar2 { height: 50%; animation-delay: 0.2s; }
+.bar3 { height: 40%; animation-delay: 0.3s; }
+.bar4 { height: 70%; animation-delay: 0.4s; }
+.bar5 { height: 90%; animation-delay: 0.5s; }
+
+@keyframes chart-pulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.token-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 8px 0;
+}
+
+.stat-item {
+  margin: 0;
+  font-size: 11px;
+  color: #FFFFFF;
+}
+
+.stat-value {
+  color: #FF00FF;
+  font-weight: bold;
+}
+
+.token-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.token-link {
+  font-size: 10px;
+  background: linear-gradient(to bottom, #00FF8F, #008F5F);
+  color: #000033;
+  text-decoration: none;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 1px outset #00FF8F;
+}
+
+.token-address {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px dashed #00FF8F;
+  margin: 5px 0;
+  padding: 2px;
+}
+
+.token-address p {
+  margin: 0;
+  font-size: 9px;
+  font-family: monospace;
+  color: #999999;
+}
+
+.token-footer {
+  margin-top: 5px;
+}
+
+.token-slogan {
+  margin: 0;
+  font-size: 10px;
+  color: #FFFF00;
+  font-weight: bold;
+  text-shadow: 1px 1px #000000;
+}
+
+/* Sidebar social links styles */
+.sidebar-social-links {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ff00ff;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.social-links-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffff00;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.sidebar-social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.twitter-button {
+  background: #000066;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+}
+
+.telegram-button {
+  background: #000066;
+  border: 1px solid #0088cc;
+  color: #0088cc;
+}
+
+.dex-button {
+  background: #000066;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+}
+
+.social-button:hover {
+  filter: brightness(1.3);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none; /* Hidden by default, shown in media query */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001; /* Ensure it's above other content */
+  background: #00000099;
+  border: 1px solid #39FF14;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #39FF14;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.menu-toggle.active {
+  background: #39FF1499;
+  border-color: #FFFF00;
+  box-shadow: 0 0 12px #FFFF00;
+}
+
+.menu-toggle.active img {
+  transform: rotate(180deg);
+}
+
+/* Responsive Styles for Mobile View */
+@media (max-width: 768px) {
+  /* Apply box-sizing to all elements */
+  * {
+    box-sizing: border-box;
+  }
+
+  .menu-toggle {
+    display: flex !important; /* Show menu toggle on mobile */
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .wrapper {
+    flex-direction: column; /* Stack content vertically on small screens */
+    max-width: 100%; /* Allow wrapper to use full width */
+    width: 100%; /* Ensure full width */
+    margin: 0;
+    padding: 0;
+    border: none; /* Remove border for a cleaner mobile look */
+    transition: transform 0.3s ease-in-out; /* For pushing content if sidebar is not overlay */
+  }
+
+  .sidebar {
+    /* display: none; Hide the sidebar */ /* Replaced by transform */
+    position: fixed; /* Fixed position to overlay or slide in */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px; /* Adjust width as needed, ensure it's wider than 180px if original content relied on it */
+    z-index: 1000; /* Below hamburger, above content */
+    background-color: #162447; /* Match original sidebar bg */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Allow scrolling within sidebar if content overflows */
+    padding-top: 50px; /* Add padding to avoid content going under a potential top bar or hamburger */
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  /* Optional: Dim content when sidebar is open */
+  .content-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999; /* Below sidebar, above content */
+  }
+
+  .sidebar-open .content-overlay {
+    display: block;
+  }
+
+  .content-area {
+    width: 100%; /* Make content area take full width */
+    padding: 10px; /* Adjust padding for smaller screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    border-right: none; /* Remove border from sidebar effect */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+
+  /* Fix any potentially overflowing images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust the banner sizes */
+  .ad-banner-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Prevent form elements from overflowing */
+  form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Fix the product showcase and order form */
+  .order-product-showcase {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure footer doesn't create scroll */
+  footer {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Adjust all sections to fit within viewport */
+  section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Adjust table layouts */
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #home h1 {
+    font-size: 24px; /* Adjust heading size for mobile */
+  }
+
+  section h2 {
+    font-size: 20px; /* Adjust section heading size */
+  }
+
+  section h3 {
+    font-size: 14px; /* Adjust sub-heading size */
+  }
+
+  /* Adjust ad placeholder sizes for mobile if necessary */
+  .ad-placeholder-medium {
+    width: auto; /* Allow ads to resize within container */
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .elon-mars-ad-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .elon-ad-left, .elon-ad-right {
+    margin-bottom: 10px;
+  }
+
+  .order-form-container {
+    padding: 10px;
+  }
+
+  .order-form label {
+    width: 100px; /* Adjust label width */
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .order-form .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .order-form input[type="text"],
+  .order-form input[type="number"],
+  .order-form select,
+  .order-form textarea {
+    width: calc(100% - 16px); /* Full width inputs accounting for padding */
+  }
+   #order form button {
+    margin-left: 0; /* Reset margin for button */
+  }
+
+  #guestbook form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  #guestbook form input[type="text"],
+  #guestbook form textarea {
+    width: calc(100% - 16px); /* Full width inputs accounting for padding */
+  }
+   #guestbook form button {
+    margin-left: 0; /* Reset margin for button */
+  }
+
+  .product-specs {
+    flex-direction: column; /* Stack spec items on mobile */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .early-2000s-badges {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .intro-banner {
+    height: auto !important; /* Adjust banner height for content */
+    padding: 15px !important;
+  }
+  #intro-banner img:first-of-type { /* Spinning Mars in banner */
+    height: 60px !important;
+    margin-right: 10px !important;
+  }
+   #intro-banner img:nth-of-type(2) { /* Mars Probe Text in banner */
+    height: 40px !important;
+  }
+  #intro-banner p {
+    font-size: 16px !important; /* Adjust text size in banner */
+  }
+
+  /* Better handle elements with potential overflow */
+  .retro-animation-container, 
+  .starburst, 
+  .pulsating-image, 
+  .flash-overlay, 
+  .rotating-glow,
+  .new-badge {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Handle marquee elements */
+  marquee {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Fix intro banner */
+  #intro-banner {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix elon mars ad */
+  .elon-mars-ad {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  /* Make all form elements fit */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix order form layout */
+  .order-form-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Adjust any potentially problematic containers */
+  .gif-gallery,
+  .cta-buttons,
+  .product-details,
+  .product-image-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Fix ad placeholder sizes */
+  .ad-placeholder-medium,
+  .ad-inline-placeholder,
+  .ad-main-placeholder,
+  .ad-placeholder-available,
+  .ad-placeholder-hot-singles,
+  .ad-placeholder-cult {
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible !important; /* Ensure ad content is visible */
+  }
+
+  /* Prevent inline styles from causing overflow */
+  [style*="width"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix margins and padding that could cause overflow */
+  .wrapper, .content-area, section, div, nav, footer, header {
+    max-width: 100vw;
+  }
+
+  /* Handle any potential horizontal overflow from animations */
+  .shake-animation, .wobble-animation, .pulse-animation, .rotate-animation {
+    max-width: 100%;
+    /* overflow: hidden; */ /* Removing this to allow animations to show properly */
+  }
+
+  /* Fix specific elements that might have fixed positioning */
+  .starburst, .rotating-glow, .new-badge, .discount-badge, .limited-time-offer {
+    position: relative;
+    max-width: 100%;
+    overflow: visible !important; /* Ensure these elements are fully visible */
+  }
+
+  /* For ad containers, ensure they display properly */
+  .ad-flashy, 
+  .ad-main-placeholder,
+  .ad-placeholder-medium {
+    overflow: visible !important;
+    height: auto !important; /* Allow height to adjust to content */
+    min-height: 100px; /* Maintain some minimum height */
+  }
+
+  /* Ensure inline styles with fixed dimensions are contained */
+  [style*="px"], [style*="width"], [style*="height"], [style*="margin"], [style*="padding"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    /* overflow: hidden !important; */ /* Removing this to prevent content being cut off */
+  }
+
+  /* Fix any elements with absolute positioning that might extend beyond container */
+  [style*="position: absolute"], [style*="position:absolute"] {
+    max-width: 100%;
+    right: auto;
+  }
+
+  /* Handle tables better for mobile */
+  table, tr, td, th {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Adjust cta-buttons for mobile */
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Better mobile-friendly layout for order form */
+  .form-row {
+    margin-bottom: 15px;
+  }
+
+  /* Ensure ad animations don't get cut off */
+  .shake-animation, 
+  .wobble-animation, 
+  .pulse-animation, 
+  .rotate-animation,
+  .colorshift-animation,
+  .blink {
+    overflow: visible !important;
+    max-width: none !important; /* Allow animations to extend beyond containers */
+    display: inline-block;
+  }
+
+  /* Fix marquee elements to ensure they display properly */
+  marquee {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* Contain the marquee itself */
+  }
+  
+  marquee span {
+    overflow: visible !important; /* But let its content be visible */
+  }
+}
+
